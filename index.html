@@ -5,23 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learning VueJs</title>
     <script src="https://unpkg.com/vue@3.0.2"></script>
-
+<style>
+    .box{
+        padding: 100px 0;
+        width: 200px;
+        text-align: center;
+        background: #ddd;
+        margin: 20px;
+        display: inline-block;
+        left:calc(250px + 100vw - 1024px)!important;
+    }
+</style>
 </head>
 <body>
     <h1>Hello VueJs:), hello man</h1>
     <div id="app">
-        <div v-if="bookShow">
-            <p>{{title}} - {{ author }} - {{ age }}</p>
-        </div>
         <button @click="showBooksToggle">
             <span v-if="bookShow">Hide Books</span>
             <span v-if="!bookShow">Show Books</span>
         </button>
-<div v-show="bookShow">Currently book is shown</div>
-        <!-- <p>{{title}} - {{ author }} - {{ age }}</p>
+        <br>
+        <div v-if="bookShow">
+            <p>{{title}} - {{ author }} - {{ age }}</p>
+        </div>
+        
+<!-- <div v-show="bookShow">Currently book is shown</div>
+        <p>{{title}} - {{ author }} - {{ age }}</p>
         <button v-on:click="age++">Incress Age</button>
         <button v-on:click="age--">Decress Age</button>
 <div @click="changeTitle('Dhaka')">change text</div> -->
+
+
+
+<div class="box" @mouseover="handelEvent($event,5)"> mouseover (enter)</div>
+<div class="box" @mouseleave="handelEvent">mouseleave</div>
+<div class="box" @dblclick="handelEvent">double click</div>
+<div class="box" @mousemove="handelMouseMove">position - {{ x}} - {{ y }}</div>
+
+<ul>
+    <li>
+        <a href="#" @click="deptEdit(1)">test 1</a>
+    </li>
+    <li>
+        <a href="#" @click="deptEdit(2)">test 2</a>
+    </li>
+    <li>
+        <a href="#" @click="deptEdit(33)">test 33</a>
+    </li>
+    <li>
+        <a href="#" @click="deptEdit(14)">test 14</a>
+    </li>
+</ul>
     </div>
 
     <script src="app.js"></script>
