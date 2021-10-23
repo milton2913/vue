@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning VueJs</title>
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+
+</head>
+<body>
+    <h1>Hello VueJs:), hello man</h1>
+    <div id="app">
+        <div v-if="bookShow">
+            <p>{{title}} - {{ author }} - {{ age }}</p>
+        </div>
+        <button @click="showBooksToggle">
+            <span v-if="bookShow">Hide Books</span>
+            <span v-if="!bookShow">Show Books</span>
+        </button>
+<div v-show="bookShow">Currently book is shown</div>
+        <!-- <p>{{title}} - {{ author }} - {{ age }}</p>
+        <button v-on:click="age++">Incress Age</button>
+        <button v-on:click="age--">Decress Age</button>
+<div @click="changeTitle('Dhaka')">change text</div> -->
+    </div>
+
+    <script src="app.js"></script>
+
+
+</body>
+</html>
